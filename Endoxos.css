@@ -1,0 +1,573 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    min-width: 500px;
+}
+
+                         /**header**/
+                         
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, white, rgba(0, 0, 0, 0.8), white);
+}
+header div{
+    display: flex;
+    align-items: center;
+}
+header div img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+header h1 {
+    background: linear-gradient(to right, black, rgba(0, 0, 0, 0.3), black);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+header a {
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+    font-size: 25px;
+    display: inline-block;
+}
+header a:hover {
+    transform: scale(1.1);
+    color: rgba(0, 0, 0, 0.5);
+}
+
+                                    /**main**/
+.background {
+    position: relative;
+    height: 800px;
+    width: 100%;
+    object-fit: contain;
+    background-color: black;
+    overflow: hidden;
+}
+.background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    animation: fadeSwap 15s ease-in-out infinite;
+}
+.background img:nth-child(1) {
+    animation-delay: 0s;
+}
+.background img:nth-child(2) {
+    animation-delay: 5s;
+}
+.background img:nth-child(3) {
+    animation-delay: 10s;
+}
+@keyframes fadeSwap {
+    0% {
+        opacity: 0;
+    }
+    6.67% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.lineargradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( to top, black, transparent);
+    z-index: 1;
+    height:  100%;
+}
+.stuf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    gap: 10px;
+    z-index: 2;
+    top: 70%;
+    margin-left: 30px;
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+}
+/* .content {
+    
+    
+} */
+.content h2 {
+    background: linear-gradient(to right,rgba(255, 255, 255, 0.3), white, rgba(255, 255, 255, 0.3), white, rgba(255, 255, 255, 0.3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.content p:last-child {
+    background: linear-gradient(to right,rgba(255, 255, 255, 0.3), white, rgba(255, 255, 255, 0.3), white, rgba(255, 255, 255, 0.3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 40px;
+}
+.content .latest {
+    background: linear-gradient(to right,rgba(255, 255, 255, 0.3), white, rgba(255, 255, 255, 0.3), white, rgba(255, 255, 255, 0.3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.stuf button {
+    margin-right: 50px;
+    margin-top: 140px;
+    padding: 7px 16px;
+    border-radius: 7px;
+    background: transparent;
+    color: white;
+    transition: 0.6s;
+}
+.stuf button:hover {
+    transform: scale(1.1);
+}
+.gallerycon {
+    display: none;
+    background-color: #000000;
+    position: fixed;
+    overflow: non;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    scrollbar-width: none;
+    transform: translateY(100vh);
+    transition: transform 1.6s ease;
+}
+.gallerycon::-webkit-scrollbar {
+    display: none;
+}
+.gallerycon.active {
+    transform: translateY(0);
+}
+.gallerycon::-webkit-scrollbar {
+    display: none;
+}
+.gallerycon button{
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 5px 20px;
+    border-radius: 11px;
+    transition: 0.6s;
+    color: white;
+    background: linear-gradient(to right, white, rgba(0, 0, 0, 0.8), white);
+}
+.gallerycon button:hover {
+    transform: scale(1.1);
+}
+.gallery {
+    display: grid;
+    margin-top: 30px;
+    overflow-y: auto;
+    height:100%;
+    scrollbar-width: scroll;
+    gap: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.3s;
+    /* border-radius: 8px; */
+    cursor: pointer;
+}
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.lightbox {
+    display: none;
+    background-color: black;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    width: 100%;
+    z-index: 11;
+}
+.lightbox button {
+    position:absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size:x-large;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.lightbox button:hover {
+    transform: scale(1.5);
+    color: red;
+}
+
+.lightbox #preview {
+    max-width: 85%;
+    max-height: 85vh;
+    object-fit: contain;
+} 
+
+
+                         /**section image**/
+.image {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(to right, white, rgba(0, 0, 0, 0.8), white);
+}
+.image .photo {
+    width: 300px;
+    height: 100px;
+    border-radius: 28px;
+    object-fit: cover;
+    animation-iteration-count:  infinite;
+    animation-name: frame ;
+    animation-duration: 1.15s;
+}
+    @keyframes frame {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    .image img:hover{
+        animation-play-state: paused;
+    }
+    .pulse img{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+
+
+
+                                /**footer**/
+
+#about {
+    display: none;
+    background-color: #000000;
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    height: 100%;
+    color: white;
+    transform: translateY(100vh);
+    transition: transform 1.5s ease;
+}
+#about.active {
+    transform: translateY(0);
+}
+.relative {
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+#about button {
+    position: absolute;
+    z-index: 10;
+    padding: 7px 40px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-left: 10px;
+   background: linear-gradient(to right, white, rgba(0, 0, 0, 0.8), white);
+    color: white;
+    font-size: 20px;
+    transition: transform 0.6s ease;
+}
+#about button:hover {
+    transform: scale(1.1);
+    color: black;
+}
+#about div img {
+    position: absolute;
+    height: 800px;
+    width: 100%;
+    object-fit: cover;
+}
+.lineargradient2 {
+    background: linear-gradient( to top, rgb(0, 0, 0, 1) 0%, rgb(0, 0, 0, 0.4) 30%, transparent 60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.mom {
+    position:absolute;
+    z-index: 6;
+    font-size: 70px;
+    font-family: "pacifico";
+    margin-top: 600px;
+    margin-left: 20px;
+}
+.my {
+    position:absolute;
+    z-index: 6;
+    margin-top: 580px;
+    margin-left: 20px;
+}
+
+.note {
+    background-color: white;
+    color: black;
+    padding: 50px;
+    font-size: large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    word-spacing: 10px;
+}
+.note span {
+    font-size: 40px;
+}
+.innercontent{
+    background-color: orangered;
+    padding: 50px;
+    font-size: large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    word-spacing: 10px;
+}
+
+footer {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    margin-top: auto;
+}
+
+footer {
+    color: white;
+    margin-bottom: 0;
+}
+
+
+.end {
+    text-align: center;
+    margin-left: 40px;
+    font-size: 50px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.endcon {
+    text-align: center;
+    margin-left: 40px;
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.contact  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px 0 40px;
+    padding: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.contact a:nth-child(2) {
+    cursor: pointer;
+}
+
+.contact a {
+    margin-bottom: 20px;
+}
+.contact nav a:first-child {
+    opacity: 0.5;
+}
+hr {
+    margin: 0 20px;
+}
+.name {
+    text-align: center;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+}
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+
+                       /*  listof */
+
+.listof {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.last h4 {
+    text-align: center;
+    padding: 50px;
+    font-size: 50px;
+    
+    
+}
+
+.listof img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.listof div p {
+    text-align: center;
+    padding: 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.gwendolyn-regular {
+  font-family: "Gwendolyn", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gwendolyn-bold {
+  font-family: "Gwendolyn", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+                /*  lightboxsecond */
+
+.lightboxsecond {
+    display: none;
+    background-color: rgb(0, 0, 0, 0.9);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    width: 100%;
+    z-index: 12;
+}
+.lightboxsecond button {
+    position:absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size:x-large;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.lightboxsecond
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lightboxsecond #previewsecond {
+    max-width: 85%;
+    max-height: 85vh;
+    object-fit: contain;
+} 
+
+
