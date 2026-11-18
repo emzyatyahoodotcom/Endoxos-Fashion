@@ -163,7 +163,6 @@ header a:hover {
     display: none;
     background-color: #000000;
     position: fixed;
-    overflow: non;
     top: 0;
     left: 0;
     z-index: 3;
@@ -203,7 +202,7 @@ header a:hover {
     gap: 10px;
     margin-left: 20px;
     margin-right: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
 
 
