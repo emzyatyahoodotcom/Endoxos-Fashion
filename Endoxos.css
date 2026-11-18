@@ -115,7 +115,7 @@ header a:hover {
     position: absolute;
     gap: 10px;
     z-index: 2;
-    top: 70%;
+    top: 500px;
     margin-left: 30px;
     font-size: 30px;
     text-align: center;
@@ -136,6 +136,7 @@ header a:hover {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+  
     margin-top: 20px;
 }
 .content .latest {
