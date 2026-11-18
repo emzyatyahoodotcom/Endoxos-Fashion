@@ -3,7 +3,7 @@
     box-sizing: border-box;
 }
 body {
-    min-width: 500px;
+    min-width: 100vw;
 }
 
                          /**header**/
